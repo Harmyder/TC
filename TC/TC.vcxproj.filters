@@ -57,6 +57,9 @@
     <ClCompile Include="utilities\utfacility\UnitTestsRegistrator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_Tasks\DiOfRaTr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -96,6 +99,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="utilities\utfacility\UnitTestsRegistrator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_Tasks\DiOfRaTr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

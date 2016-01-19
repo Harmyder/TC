@@ -10,21 +10,19 @@ using namespace algorithm;
 
 namespace sdk
 {
-    void GraphFactory::PrepareAB(vector<int>& a, vector<int>& b)
+    void GraphFactory::PrepareAB(vector<int>&, vector<int>&)
     {
-        class SortIndices
-        {
-        private:
-            const vector<int>& a_;
-        public:
-            SortIndices(const vector<int>& a) : a_(a) {}
-            bool operator()(int i, int j) const { return a_[i] < a_[j]; }
-        };
+        //class SortIndices
+        //{
+        //    const vector<int>& a_;
+        //public:
+        //    SortIndices(const vector<int>& a) : a_(a) {}
+        //    bool operator()(int i, int j) const { return a_[i] < a_[j]; }
+        //};
 
-        vector<int> indices(a.size());
-        iota(indices.begin(), indices.end(), 0);
-        sort(indices.begin(), indices.end());
-
+        //vector<int> indices(a.size());
+        //iota(indices.begin(), indices.end(), 0);
+        //sort(indices.begin(), indices.end());
     }
 
     Graph GraphFactory::Construct(const vector<int>& a, const vector<int>& b)

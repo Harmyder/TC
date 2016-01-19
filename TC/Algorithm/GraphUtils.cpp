@@ -15,10 +15,10 @@ namespace algorithm
         const vector<BFS::Vertex> res = bfs.Run(0);
 
         const auto comp = [](const BFS::Vertex& v1, const BFS::Vertex& v2) { return v1.edge_distance < v2.edge_distance; };
-        const int furthest_index = abs(distance(res.cbegin(), max_element(res.cbegin(), res.cend(), comp)));
+        const int furthest_index = static_cast<int>(abs(distance(res.cbegin(), max_element(res.cbegin(), res.cend(), comp))));
         const vector<BFS::Vertex> res_2 = bfs.Run(furthest_index);
 
-        const int furthest_index_2 = abs(distance(res_2.cbegin(), max_element(res_2.cbegin(), res_2.cend(), comp)));
+        const int furthest_index_2 = static_cast<int>(abs(distance(res_2.cbegin(), max_element(res_2.cbegin(), res_2.cend(), comp))));
 
         int index = furthest_index_2;
         vector<int> path;

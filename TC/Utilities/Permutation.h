@@ -27,7 +27,7 @@ namespace utilities
 
         while (!not_revised.empty())
         {
-            ArrayRandomIterator::value_type saved_value;
+            ArrayRandomIterator::value_type saved_value{};
             int saved_index = NO_INDEX;
             int index_next = *not_revised.begin();
 

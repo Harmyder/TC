@@ -6,6 +6,8 @@ namespace algorithm
 {
     class BFS final
     {
+        BFS& operator=(const BFS& other) = delete;
+
     public:
         BFS(const sdk::Graph& graph) : graph_(graph) {}
 

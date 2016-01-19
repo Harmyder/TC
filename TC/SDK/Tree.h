@@ -7,7 +7,8 @@ namespace sdk
     public:
         Tree() {}
         Tree(std::initializer_list<Tree> children) : children_(children) {}
-        Tree(std::vector<Tree> children) : children_(children) {}
+        explicit Tree(const std::vector<Tree>& children) : children_(children) {}
+        explicit Tree(std::vector<Tree>&& children) : children_(children) {}
 
         const std::vector<Tree>& GetChildren() const { return children_; }
 

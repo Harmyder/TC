@@ -14,8 +14,8 @@
 #include <vector>
 #include <list>
 #include <set>
+#include <map>
 #include <algorithm>
-#include <set>
 
 
 #include <d2d1.h>

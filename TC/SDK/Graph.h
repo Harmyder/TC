@@ -16,6 +16,8 @@ namespace sdk
 
         class AdjacencyList
         {
+            AdjacencyList& operator=(const AdjacencyList& other) = delete;
+
             const std::vector<int>::const_iterator cbegin_;
             const std::vector<int>::const_iterator cend_;
 
@@ -27,6 +29,7 @@ namespace sdk
 
             std::vector<int>::const_iterator begin() const { return cbegin_; }
             std::vector<int>::const_iterator end() const { return cend_; }
+            size_t size() const { return cend_ - cbegin_; }
         };
         
         // vertices indices must contain sentinel element with total size of adjacency list at the end
