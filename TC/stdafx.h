@@ -16,6 +16,7 @@
 #include <set>
 #include <map>
 #include <algorithm>
+#include <numeric>
 
 
 #include <d2d1.h>

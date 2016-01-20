@@ -40,8 +40,14 @@ int main()
 {
     RunUnitTests();
 
-    cout << DiOfRaTr::Run({ 0, 0, 0 }, { 1, 2, 3 }) << ", expected is " << 3.375 << endl;
-    cout << DiOfRaTr::Run({ 0, 0, 0, 1, 4 }, { 1, 2, 3, 4, 5 }) << ", expected is " << 6.25 << endl;
+    {
+        cout << "\tBridge case" << endl;
+        cout << DiOfRaTr::Run({ 0, 0, 0, 1, 4 }, { 1, 2, 3, 4, 5 }) << ", expected is " << 6.25 << endl;
+        cout << DiOfRaTr::Run({ 0, 0, 0, 1, 2, 3, 5, 6, 8 }, { 1, 2, 3, 4, 5, 6, 7, 8, 9 }) << ", expected is " << 10.53125 << endl;
+
+        cout << "\tCenter vertex case" << endl;
+        cout << DiOfRaTr::Run({ 0, 0, 0 }, { 1, 2, 3 }) << ", expected is " << 3.375 << endl;
+    }
 
     cin.get();
     return 0;

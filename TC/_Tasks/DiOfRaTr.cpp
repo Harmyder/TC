@@ -50,6 +50,7 @@ namespace
                 }
             }
 
+            assert(abs(accumulate(current.begin(), current.end(), 0.f, [](float acc, const pair<int, float>& next) { return acc + next.second; }) - 1.f) < 0.001f);
             swap(prev, current);
         }
 
@@ -67,18 +68,20 @@ namespace
         return expected;
     }
 
-    //0     == empl(Tree{})
-    //1.5   == empl(Tree{ {} })
-    //1.75  == empl(Tree{ {}, {} })
-    //3.25  == empl(Tree{ { {}, {} }, {} })
-    //1.875 == empl(Tree{ {}, {}, {} })
-    //3.375 == empl(Tree{ { {} }, { {} } })
 }
 
 namespace tasks
 {
     float DiOfRaTr::Run(const vector<int>& a, const vector<int>& b)
     {
+        assert(0 == empl(Tree{}));
+        assert(1.5 == empl(Tree{ {} }));
+        assert(1.75 == empl(Tree{ {}, {} }));
+        assert(3.25 == empl(Tree{ { {}, {} }, {} }));
+        assert(1.875 == empl(Tree{ {}, {}, {} }));
+        assert(3.375 == empl(Tree{ { {} }, { {} } }));
+        empl(Tree{ { {}, { { { { {}, {} } }, {} } } }, { { {}, { { {}, {} } } } } });
+
         const Graph g = GraphFactory::Construct(a, b);
         const vector<int> dia_path = GraphUtils::Diameter(g);
         const size_t dia_length = dia_path.size();
@@ -96,6 +99,7 @@ namespace tasks
         {
             // There is a vertex in the middle
             const int center = dia_path[dia_length / 2];
+            const int edgesLength = static_cast<int>(2 * (dia_length / 2));
 
             const Graph::AdjacencyList al = g[center];
             const size_t degree = al.size();
@@ -104,28 +108,65 @@ namespace tasks
             singles.reserve(degree);
             for (const int v : al)
             {
-                singles.push_back(TreeFactory::FromTreeGraph(g, v, center));
+                Tree t(vector<Tree>{ TreeFactory::FromTreeGraph(g, v, center) });
+                singles.push_back(std::move(t));
             }
 
-            for (int mid = 0; mid < degree; ++mid)
+            map<pair<int, int>, float> possible_lengths;
+            for (int i = edgesLength / 2; i <= edgesLength; ++i)
             {
-                vector<pair<Tree, Tree>> pairs;
-                pairs.reserve(degree);
-                for (size_t i = 1; i < degree; ++i)
+                for (int j = edgesLength / 2; j <= edgesLength; ++j)
                 {
-                    pairs.push_back({
-                        Tree(vector<Tree>(singles.begin(), singles.begin() + i)),
-                        Tree(vector<Tree>(singles.rbegin(), singles.rbegin() + degree - i))
-                    });
+                    possible_lengths[{i, j}] = 0.f;
                 }
-
-                for (size_t i = 0; i < degree - 1; ++i)
-                {
-                    res = max(res, empl(pairs[i].first) + empl(pairs[i].second));
-                }
-
-                rotate(singles.begin(), singles.begin() + 1, singles.end());
             }
+
+            // First two trees form first hypothesis
+            map<int, float> singles0 = empl_internal(singles[0]);
+            map<int, float> singles1 = empl_internal(singles[1]);
+            for (const auto& s0 : singles0)
+            {
+                for (const auto& s1 : singles1)
+                {
+                    possible_lengths.at({ s0.first, s1.first }) = s0.second * s1.second;
+                }
+            }
+
+            // Tune hypothesis with every next tree
+            map<pair<int, int>, float> tmp_possible_lengths = possible_lengths;
+            for (int i = 2; i < singles.size(); ++i)
+            {
+                for_each(tmp_possible_lengths.begin(), tmp_possible_lengths.end(), [](pair<const pair<int, int>, float>& value) { value.second = 0.f; });
+
+                map<int, float> single = empl_internal(singles[i]);
+                for (const auto& s : single)
+                {
+                    for (auto& pl : possible_lengths)
+                    {
+                        const pair<int, int>& old_lengths = pl.first;
+                        pair<int, int> new_lengths = old_lengths;
+                        if (old_lengths.first < old_lengths.second)
+                        {
+                            if (old_lengths.first < s.first)
+                                new_lengths = { s.first, old_lengths.second };
+                        }
+                        else
+                        {
+                            if (old_lengths.second < s.first)
+                                new_lengths = { old_lengths.first, s.first };
+                        }
+
+                        tmp_possible_lengths.at(new_lengths) += possible_lengths.at(old_lengths) * s.second;
+                    }
+                }
+                swap(tmp_possible_lengths, possible_lengths);
+            }
+
+            res = accumulate(possible_lengths.begin(), possible_lengths.end(), 0.f,
+                [](float acc, const pair<pair<int, int>, float>& next)
+            { 
+                return acc += (next.first.first + next.first.second) * next.second;
+            });
         }
 
         return res;
