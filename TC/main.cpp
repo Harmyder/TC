@@ -16,6 +16,7 @@
 #include <math.h>
 
 #include "_Tasks\DiOfRaTr.h"
+#include "_Tasks\ReOfThSi.h"
 
 #include "Utilities\UtFacility\UnitTestsRegistrator.h"
 
@@ -41,12 +42,24 @@ int main()
     RunUnitTests();
 
     {
+        cout << endl << "DiOfRaTr:" << endl;
+
         cout << "\tBridge case" << endl;
         cout << DiOfRaTr::Run({ 0, 0, 0, 1, 4 }, { 1, 2, 3, 4, 5 }) << ", expected is " << 6.25 << endl;
         cout << DiOfRaTr::Run({ 0, 0, 0, 1, 2, 3, 5, 6, 8 }, { 1, 2, 3, 4, 5, 6, 7, 8, 9 }) << ", expected is " << 10.53125 << endl;
 
         cout << "\tCenter vertex case" << endl;
         cout << DiOfRaTr::Run({ 0, 0, 0 }, { 1, 2, 3 }) << ", expected is " << 3.375 << endl;
+    }
+
+    {
+        cout << endl << "ReOfThSi:" << endl;
+        ReOfThSi rots;
+        cout << rots.Run({ 1, 1, 1, 1, 1, 1, 1 }, 3, 3) << " expected is " << 0 << endl;
+        cout << rots.Run({ 1, 2, 3, 4, 5, 6 }, 1, 2) << " expected is " << 30 << endl;
+        cout << rots.Run({ 2, 3, 5 }, 1, 1) << " expected is " << 19 << endl;
+        cout << rots.Run({ 2, 3, 5 }, 2, 1) << " expected is " << 17 << endl;
+        cout << rots.Run({ 1, 2, 3 }, 2, 2) << " expected is " << 0 << endl;
     }
 
     cin.get();

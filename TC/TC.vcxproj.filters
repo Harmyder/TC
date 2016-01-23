@@ -60,6 +60,9 @@
     <ClCompile Include="_Tasks\DiOfRaTr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_Tasks\ReOfThSi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -102,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="_Tasks\DiOfRaTr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_Tasks\ReOfThSi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

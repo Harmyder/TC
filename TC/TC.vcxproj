@@ -156,6 +156,7 @@
     <ClCompile Include="algorithm\GraphUtils.cpp" />
     <ClCompile Include="algorithm\unittests\UnitTest_BFS.cpp" />
     <ClCompile Include="algorithm\unittests\UnitTest_GraphUtils.cpp" />
+    <ClCompile Include="_Tasks\ReOfThSi.cpp" />
     <ClCompile Include="_Tasks\DiOfRaTr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="sdk\Graph.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="algorithm\GraphUtils.h" />
     <ClInclude Include="algorithm\unittests\UnitTest_BFS.h" />
     <ClInclude Include="algorithm\unittests\UnitTest_GraphUtils.h" />
+    <ClInclude Include="_Tasks\ReOfThSi.h" />
     <ClInclude Include="_Tasks\DiOfRaTr.h" />
     <ClInclude Include="sdk\Graph.h" />
     <ClInclude Include="sdk\Tree.h" />
