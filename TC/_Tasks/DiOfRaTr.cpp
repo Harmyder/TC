@@ -82,7 +82,7 @@ namespace tasks
         assert(3.375 == empl(Tree{ { {} }, { {} } }));
         empl(Tree{ { {}, { { { { {}, {} } }, {} } } }, { { {}, { { {}, {} } } } } });
 
-        const Graph g = GraphFactory::Construct(a, b);
+        const Graph g = GraphFactory::Construct(a.size(), a.cbegin(), b.cbegin());
         const vector<int> dia_path = GraphUtils::Diameter(g);
         const size_t dia_length = dia_path.size();
 

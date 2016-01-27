@@ -59,8 +59,38 @@ namespace sdk
     class GraphFactory final
     {
     public:
-        static void PrepareAB(std::vector<int>& a, std::vector<int>& b);
-        static Graph Construct(const std::vector<int>& a, const std::vector<int>& b);
+        template <class RnIt>
+        static void PrepareAB(int elements_count, std::vector<int>::iterator a_begin, std::vector<int>::iterator b_begin, RnIt data_begin);
+
+        // Before call to Construct, a and b must have been prepared
+        static Graph Construct(size_t edges_count, std::vector<int>::const_iterator a, std::vector<int>::const_iterator b);
     };
+
+    template <class RnIt>
+    void GraphFactory::PrepareAB(int elements_count, std::vector<int>::iterator a_begin, std::vector<int>::iterator b_begin, RnIt data_begin)
+    {
+        struct Combined
+        {
+            int a;
+            int b;
+            RnIt::value_type data;
+        };
+
+        std::vector<Combined> combined;
+        for (int i = 0; i < elements_count; ++i)
+        {
+            combined[i] = { a_begin + i, b_begin + i, data_begin + i };
+        }
+
+        sort(combined.begin(), combined.end(), [](const Combined& x, const Combined& y) { return (x.a < y.a) && (x.b < y.b); });
+
+        for (int i = 0; i < elements_count; ++i)
+        {
+            *(a_begin + i) = combined[i].a;
+            *(b_begin + i) = combined[i].b;
+            *(data_begin + i) = combined[i].data;
+        }
+    }
+
 }
 

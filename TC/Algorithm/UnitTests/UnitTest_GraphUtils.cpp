@@ -28,7 +28,9 @@ namespace algorithm
         //           1 2 3
         //          /| |
         //         4 5 6 
-        Graph g = GraphFactory::Construct({ 0, 0, 0, 1, 1, 2 }, { 1, 2, 3, 4, 5, 6 });
+        vector<int> a{ 0, 0, 0, 1, 1, 2 };
+        vector<int> b{ 1, 2, 3, 4, 5, 6 };
+        Graph g = GraphFactory::Construct(a.size(), a.cbegin(), b.cbegin());
         const auto path = GraphUtils::Diameter(g);
         
         const int expected_diameter = 4;
@@ -37,7 +39,9 @@ namespace algorithm
 
     void UnitTest_GraphUtils::TestCutBridge()
     {
-        Graph g = GraphFactory::Construct({ 0, 0, 0, 1, 1, 2 }, { 1, 2, 3, 4, 5, 6 });
+        vector<int> a{ 0, 0, 0, 1, 1, 2 };
+        vector<int> b{ 1, 2, 3, 4, 5, 6 };
+        Graph g = GraphFactory::Construct(a.size(), a.cbegin(), b.cbegin());
         const auto p = GraphUtils::CutBridge(g, { 0, 1 });
     }
 }

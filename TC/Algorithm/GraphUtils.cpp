@@ -63,7 +63,7 @@ namespace algorithm
         }
 
 
-        return{ GraphFactory::Construct(a[0], b[0]), GraphFactory::Construct(a[1], b[1]) };
+        return{ GraphFactory::Construct(a[0].size(), a[0].cbegin(), b[0].cbegin()), GraphFactory::Construct(a[1].size(), a[1].cbegin(), b[1].cbegin()) };
     }
 
 }

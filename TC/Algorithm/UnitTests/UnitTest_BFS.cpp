@@ -17,7 +17,7 @@ namespace
 {
     void SingleTest(const vector<int>& a, const vector<int>& b, const vector<BFS::Vertex> expected)
     {
-        Graph g = GraphFactory::Construct(a, b);
+        Graph g = GraphFactory::Construct(a.size(), a.cbegin(), b.cbegin());
         BFS bfs(g);
         const vector<BFS::Vertex> actual = bfs.Run(0);
 
