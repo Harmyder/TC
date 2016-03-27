@@ -47,7 +47,7 @@ int main()
         cout << PaliPath({ 0, 0, 3, 4, 5, 6 }, { 2, 3, 4, 5, 6, 1 }, "abaaaa").Run() << ", expected is " << 9 << endl;
         cout << PaliPath({ 2, 2, 0, 3, 4 }, { 0, 1, 3, 4, 1 }, "abxyz").Run() << ", expected is " << -1 << endl;
         cout << PaliPath({ 0, 0, 3, 4, 5 }, { 2, 3, 4, 5, 1 }, "abaaa").Run() << ", expected is " << -1 << endl;
-        cout << PaliPath({ 0 }, { 1 }, "x").Run() << ", expected is " << -1 << endl;
+        cout << PaliPath({ 0 }, { 1 }, "x").Run() << ", expected is " << 1 << endl;
     }
 
     {

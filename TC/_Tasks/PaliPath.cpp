@@ -23,7 +23,9 @@ namespace tasks
 
         dp_explored_.resize(vertices_count, vector<bool>(vertices_count, false));
 
-        vector<pair< int, int >> level{ { 0, 1 } };
+        const int start_node = 0; 
+        const int end_node = 1;
+        vector<pair< int, int >> level{ { start_node, end_node } };
         vector<pair< int, int >> level_next;
 
         int edges_total = 0;
@@ -33,19 +35,22 @@ namespace tasks
             bool has_linked_up;
             int edges_added;
             StepBfs(level, &level_next, &edges_added, &has_linked_up);
+            edges_total += edges_added;
+            
             not_done = !has_linked_up;
 
-            edges_total += edges_added;
-
-            // No more where to go
-            if (level_next.size() == 0)
+            if (not_done)
             {
-                edges_total = -1;
-                break;
-            }
+                // No more where to go
+                if (level_next.size() == 0)
+                {
+                    edges_total = -1;
+                    break;
+                }
 
-            level.swap(level_next);
-            level_next.clear();
+                level.swap(level_next);
+                level_next.clear();
+            }
         }
         
 
