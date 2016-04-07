@@ -90,19 +90,19 @@ namespace utilities
         void UnitTest::CheckTrue(bool value, char *file, int line)
         {
             if (!value)
-            {
-                DebugPrintf("\nTrue expected.\n");
-                CheckFailed(file, line);
-            }
+                ReportFailure("\nTrue expected.\n", file, line);
         }
 
         void UnitTest::CheckFalse(bool value, char *file, int line)
         {
             if (value)
-            {
-                DebugPrintf("\nFalse expected.\n");
-                CheckFailed(file, line);
-            }
+                ReportFailure("\nFalse expected.\n", file, line);
+        }
+
+        void UnitTest::ReportFailure(std::string msg, char *file, int line)
+        {
+            DebugPrintf(msg.c_str());
+            CheckFailed(file, line);
         }
     }
 }
