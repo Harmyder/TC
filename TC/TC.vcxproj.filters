@@ -84,6 +84,9 @@
     <ClCompile Include="Algorithm\UnitTests\UnitTest_ConvexHull.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_Tasks\AttackOfTheClones.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -165,6 +168,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SDK\Core\Container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_Tasks\AttackOfTheClones.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

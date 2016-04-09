@@ -157,6 +157,7 @@
     <ClCompile Include="algorithm\unittests\UnitTest_BFS.cpp" />
     <ClCompile Include="algorithm\unittests\UnitTest_GraphUtils.cpp" />
     <ClCompile Include="Algorithm\ConvexHull.cpp" />
+    <ClCompile Include="_Tasks\AttackOfTheClones.cpp" />
     <ClCompile Include="SDK\Types\Point.cpp" />
     <ClCompile Include="SDK\Teli\UnitTests\UnitTest_RbTree.cpp" />
     <ClCompile Include="SDK\Teli\RbTree.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="algorithm\GraphUtils.h" />
     <ClInclude Include="algorithm\unittests\UnitTest_BFS.h" />
     <ClInclude Include="algorithm\unittests\UnitTest_GraphUtils.h" />
+    <ClInclude Include="_Tasks\AttackOfTheClones.h" />
     <ClInclude Include="SDK\Core\Container.h" />
     <ClInclude Include="SDK\Core\Floating.h" />
     <ClInclude Include="Algorithm\ConvexHull.h" />
