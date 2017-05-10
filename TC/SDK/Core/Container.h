@@ -9,7 +9,7 @@ namespace sdk
     {
         if (index == -1)
             return static_cast<I>(size - 1);
-        if (index == size)
+        if (index == (I)size)
             return static_cast<I>(0);
         return index;
     }

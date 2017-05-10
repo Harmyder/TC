@@ -37,7 +37,7 @@ namespace sdk
             adjacency_lists_(adjacencyLists),
             vertices_indices_(verticesIndices)
         {
-            assert(vertices_indices_.back() == adjacency_lists_.size());
+            assert(vertices_indices_.back() == (int)adjacency_lists_.size());
         }
         
         size_t VerticesCount() const 
@@ -47,7 +47,7 @@ namespace sdk
 
         const AdjacencyList operator[] (int i) const
         { 
-            assert(i < vertices_indices_.size());
+            assert(i < (int)vertices_indices_.size());
             return
             { 
                 adjacency_lists_.cbegin() + vertices_indices_[i],

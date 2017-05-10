@@ -18,10 +18,10 @@ namespace sdk
         const int vertices_count = max(*max_element(a, a + edges_count), *max_element(b, b + edges_count)) + 1;
         vector<int> vertices_indices(vertices_count + 1, -1);
 
-        for (size_t v = 0; v < vertices_count; ++v)
+        for (int v = 0; v < (int)vertices_count; ++v)
         {
             vertices_indices[v] = static_cast<int>(adjacency_lists.size());
-            for (int i = 0; i < edges_count; ++i)
+            for (int i = 0; i < (int)edges_count; ++i)
             {
                 if (*(a + i) == v)
                     adjacency_lists.push_back(*(b + i));

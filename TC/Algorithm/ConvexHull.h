@@ -112,7 +112,7 @@ namespace sdk
         }
 
         // 4. Fill output vector
-        if (hull->capacity() - hull->size() < hull_size)
+        if (hull->capacity() - hull->size() < (size_t)hull_size)
             hull->reserve(hull->size() + hull_size);
 
         for (int i = 0; i < hull_size; ++i)

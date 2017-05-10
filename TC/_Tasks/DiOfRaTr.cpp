@@ -134,7 +134,7 @@ namespace tasks
 
             // Tune hypothesis with every next tree
             map<pair<int, int>, float> tmp_possible_lengths = possible_lengths;
-            for (int i = 2; i < singles.size(); ++i)
+            for (int i = 2; i < (int)singles.size(); ++i)
             {
                 for_each(tmp_possible_lengths.begin(), tmp_possible_lengths.end(), [](pair<const pair<int, int>, float>& value) { value.second = 0.f; });
 

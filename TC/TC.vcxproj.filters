@@ -87,6 +87,12 @@
     <ClCompile Include="_Tasks\AttackOfTheClones.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_Tasks\MaxDonats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_Tasks\MappinABC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -171,6 +177,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="_Tasks\AttackOfTheClones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_Tasks\MaxDonats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_Tasks\MappinABC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

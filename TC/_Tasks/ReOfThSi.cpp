@@ -26,9 +26,9 @@ namespace tasks
     // Not really DP, because when we cane to a subtask with all moveable or non-moveable, we compute instead of recurse deeper
     int ReOfThSi::Run(const std::vector<int>& steps, int T, int D)
     {
-        assert(T < steps.size());
+        assert(T < (int)steps.size());
 
-        const size_t stepsCount = steps.size();
+        const int stepsCount = (int)steps.size();
 
         dp_ = vector<vector<vector<int>>>(stepsCount, vector<vector<int>>(stepsCount + 1, vector<int>(T + 1, numeric_limits<int>::max())));
 

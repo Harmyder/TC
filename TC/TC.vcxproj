@@ -95,7 +95,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>.</AdditionalIncludeDirectories>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -125,7 +125,7 @@
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalIncludeDirectories>.</AdditionalIncludeDirectories>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -157,6 +157,8 @@
     <ClCompile Include="algorithm\unittests\UnitTest_BFS.cpp" />
     <ClCompile Include="algorithm\unittests\UnitTest_GraphUtils.cpp" />
     <ClCompile Include="Algorithm\ConvexHull.cpp" />
+    <ClCompile Include="_Tasks\MappinABC.cpp" />
+    <ClCompile Include="_Tasks\MaxDonats.cpp" />
     <ClCompile Include="_Tasks\AttackOfTheClones.cpp" />
     <ClCompile Include="SDK\Types\Point.cpp" />
     <ClCompile Include="SDK\Teli\UnitTests\UnitTest_RbTree.cpp" />
@@ -182,6 +184,8 @@
     <ClInclude Include="algorithm\GraphUtils.h" />
     <ClInclude Include="algorithm\unittests\UnitTest_BFS.h" />
     <ClInclude Include="algorithm\unittests\UnitTest_GraphUtils.h" />
+    <ClInclude Include="_Tasks\MappinABC.h" />
+    <ClInclude Include="_Tasks\MaxDonats.h" />
     <ClInclude Include="_Tasks\AttackOfTheClones.h" />
     <ClInclude Include="SDK\Core\Container.h" />
     <ClInclude Include="SDK\Core\Floating.h" />

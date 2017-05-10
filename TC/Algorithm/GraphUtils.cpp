@@ -42,7 +42,7 @@ namespace algorithm
 
         vector<int> a[2];
         vector<int> b[2];
-        for (int i = 0; i < connected.VerticesCount(); ++i)
+        for (int i = 0; i < (int)connected.VerticesCount(); ++i)
         {
             const int closest = bfs_tree[0][i].edge_distance < bfs_tree[1][i].edge_distance ? 0 : 1;
             for (int v : connected[i])
