@@ -1,6 +1,7 @@
 #pragma once
 
 #include <sstream>
+#include "Utilities\UtFacility\Ostream\CustomOstream.h"
 
 namespace utilities
 {

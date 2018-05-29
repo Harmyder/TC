@@ -7,12 +7,14 @@
 #include "Algorithm\UnitTests\UnitTest_ConvexHull.h"
 #include "Utilities\UnitTests\UnitTest_Permutation.h"
 #include "SDK\Teli\UnitTests\UnitTest_RbTree.h"
+#include "SDK\Numeric\UnitTests\UnitTest_Euclid.h"
 #include "SDK\Types\UnitTests\UnitTest_Point.h"
 
 using namespace std;
 using namespace algorithm;
 using namespace sdk;
 using namespace teli;
+using namespace numeric;
 
 namespace utilities
 {
@@ -24,6 +26,7 @@ namespace utilities
             Tests.push_back(new UnitTest_GraphUtils());
             Tests.push_back(new UnitTest_Permutation());
             Tests.push_back(new UnitTest_RbTree());
+            Tests.push_back(new UnitTest_Euclid());
             Tests.push_back(new UnitTest_Point());
             Tests.push_back(new UnitTest_ConvexHull());
         }

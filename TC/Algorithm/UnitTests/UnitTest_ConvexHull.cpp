@@ -2,7 +2,6 @@
 
 #include "UnitTest_ConvexHull.h"
 
-#include "Utilities\UtFacility\Ostream\PointOstream.h"
 #include "Utilities\UtFacility\UnitTestHelpers.h"
 
 #include <Algorithm\ConvexHull.h>

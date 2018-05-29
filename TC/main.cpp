@@ -21,6 +21,7 @@
 #include "_Tasks\PaliPath.h"
 #include "_Tasks\MaxDonats.h"
 #include "_Tasks\MappinABC.h"
+#include "_Tasks\BearEmptyCoin.h"
 
 #include "Utilities\UtFacility\UnitTestsRegistrator.h"
 
@@ -134,6 +135,58 @@ int main()
         PrintResult(rots.Run({ 2, 3, 5 }, 1, 1), 19);
         PrintResult(rots.Run({ 2, 3, 5 }, 2, 1), 17);
         PrintResult(rots.Run({ 1, 2, 3 }, 2, 2), 0);
+    }
+
+    {
+        cout << endl << "BearEmptyCoin:" << endl;
+        BearEmptyCoin bec;
+        PrintResult(bec.win_probability(18, 123456), 49870ll);
+	    PrintResult(bec.win_probability(1, 17), 2ll);
+	    PrintResult(bec.win_probability(2, -50), 4ll);
+	    PrintResult(bec.win_probability(2, -49), 2ll);
+	    PrintResult(bec.win_probability(4, 42), 8ll);
+	    PrintResult(bec.win_probability(4, -123456789), 6ll);
+	    PrintResult(bec.win_probability(18, 123456), 49870ll);
+	    PrintResult(bec.win_probability(20, -2845018), 187942ll);
+	    PrintResult(bec.win_probability(40, 1), 138834194756ll);
+	    PrintResult(bec.win_probability(45, 7), 4245049529812ll);
+	    PrintResult(bec.win_probability(46, -4), 8300338116572ll);
+	    PrintResult(bec.win_probability(48, 1), 32333691386100ll);
+	    PrintResult(bec.win_probability(48, 2), 32467381649194ll);
+	    PrintResult(bec.win_probability(48, 3), 32444728845612ll);
+	    PrintResult(bec.win_probability(48, 4), 32484044416434ll);
+	    PrintResult(bec.win_probability(48, 536870912), 32484083199532ll);
+	    PrintResult(bec.win_probability(48, -12), 32497456808804ll);
+	    PrintResult(bec.win_probability(50, 0), 1125899906842624ll);
+	    PrintResult(bec.win_probability(55, 1331), 3941269902101972ll);
+	    PrintResult(bec.win_probability(55, -10240), 3943804317714000ll);
+	    PrintResult(bec.win_probability(56, 1), 7688091247051004ll);
+	    PrintResult(bec.win_probability(56, 14), 7697975326484038ll);
+	    PrintResult(bec.win_probability(57, 584141), 15448986573412072ll);
+	    PrintResult(bec.win_probability(57, 29317), 15448988483966872ll);
+	    PrintResult(bec.win_probability(57, 3), 15486421747060896ll);
+	    PrintResult(bec.win_probability(57, -9), 15486421747060896ll);
+	    PrintResult(bec.win_probability(57, 57), 144115188075855872ll);
+	    PrintResult(bec.win_probability(58, 2149567), 30634274042643224ll);
+	    PrintResult(bec.win_probability(58, -1974706), 30256308000358456ll);
+	    PrintResult(bec.win_probability(58, -13805936), 30256308000358456ll);
+	    PrintResult(bec.win_probability(58, 438190), 288230376151711744ll);
+	    PrintResult(bec.win_probability(59, 990182101), 60851070403400216ll);
+	    PrintResult(bec.win_probability(60, 950123071), 118346099267169764ll);
+	    PrintResult(bec.win_probability(60, 25279), 118346099267169764ll);
+	    PrintResult(bec.win_probability(60, 36902), 118660374228977932ll);
+	    PrintResult(bec.win_probability(60, 2700003), 118809561469934696ll);
+	    PrintResult(bec.win_probability(60, 680246), 118660374228977932ll);
+	    PrintResult(bec.win_probability(60, -122400444), 118978535620999900ll);
+	    PrintResult(bec.win_probability(60, 73264952), 118938508471432060ll);
+	    PrintResult(bec.win_probability(60, -13451264), 118938508471432060ll);
+	    PrintResult(bec.win_probability(60, 892020), 1152921504606846976ll);
+	    PrintResult(bec.win_probability(60, 32271040), 118943684750808136ll);
+	    PrintResult(bec.win_probability(1, 0), 2ll);
+	    PrintResult(bec.win_probability(1, -1), 2ll);
+	    PrintResult(bec.win_probability(1, 1000000000), 2ll);
+	    PrintResult(bec.win_probability(1, 36419354), 2ll);
+	    PrintResult(bec.win_probability(1, -15694274), 2ll);
     }
 
     cout << "Press <Enter> to stop" << endl;

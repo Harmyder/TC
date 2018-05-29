@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -21,30 +21,31 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{572F12DE-B19E-4236-B791-21E32415CF12}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -157,6 +158,9 @@
     <ClCompile Include="algorithm\unittests\UnitTest_BFS.cpp" />
     <ClCompile Include="algorithm\unittests\UnitTest_GraphUtils.cpp" />
     <ClCompile Include="Algorithm\ConvexHull.cpp" />
+    <ClCompile Include="_Tasks\BearEmptyCoin.cpp" />
+    <ClCompile Include="SDK\Numeric\Euclid.cpp" />
+    <ClCompile Include="SDK\Numeric\UnitTests\UnitTest_Euclid.cpp" />
     <ClCompile Include="_Tasks\MappinABC.cpp" />
     <ClCompile Include="_Tasks\MaxDonats.cpp" />
     <ClCompile Include="_Tasks\AttackOfTheClones.cpp" />
@@ -184,6 +188,9 @@
     <ClInclude Include="algorithm\GraphUtils.h" />
     <ClInclude Include="algorithm\unittests\UnitTest_BFS.h" />
     <ClInclude Include="algorithm\unittests\UnitTest_GraphUtils.h" />
+    <ClInclude Include="_Tasks\BearEmptyCoin.h" />
+    <ClInclude Include="SDK\Numeric\Euclid.h" />
+    <ClInclude Include="SDK\Numeric\UnitTests\UnitTest_Euclid.h" />
     <ClInclude Include="_Tasks\MappinABC.h" />
     <ClInclude Include="_Tasks\MaxDonats.h" />
     <ClInclude Include="_Tasks\AttackOfTheClones.h" />
@@ -197,7 +204,7 @@
     <ClInclude Include="SDK\Types\UnitTests\UnitTest_Point.h" />
     <ClInclude Include="Algorithm\UnitTests\UnitTest_ConvexHull.h" />
     <ClInclude Include="Utilities\Hash.h" />
-    <ClInclude Include="Utilities\UtFacility\Ostream\PointOstream.h" />
+    <ClInclude Include="Utilities\UtFacility\Ostream\CustomOstream.h" />
     <ClInclude Include="_Tasks\PaliPath.h" />
     <ClInclude Include="_Tasks\ReOfThSi.h" />
     <ClInclude Include="_Tasks\DiOfRaTr.h" />

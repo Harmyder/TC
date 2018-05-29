@@ -93,6 +93,15 @@
     <ClCompile Include="_Tasks\MappinABC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SDK\Numeric\Euclid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Numeric\UnitTests\UnitTest_Euclid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_Tasks\BearEmptyCoin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -167,9 +176,6 @@
     <ClInclude Include="Algorithm\UnitTests\UnitTest_ConvexHull.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Utilities\UtFacility\Ostream\PointOstream.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SDK\Core\Floating.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -183,6 +189,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="_Tasks\MappinABC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Numeric\Euclid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Numeric\UnitTests\UnitTest_Euclid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\UtFacility\Ostream\CustomOstream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_Tasks\BearEmptyCoin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
