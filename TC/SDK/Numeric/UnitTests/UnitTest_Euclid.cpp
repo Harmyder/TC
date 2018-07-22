@@ -64,6 +64,7 @@ namespace sdk
 
         void UnitTest_Euclid::invModConcrete() {
             CHECK_EQUAL(invMod(3, 26), 9);
+            CHECK_EQUAL(invMod(26, 3), 2);
         }
 
         void UnitTest_Euclid::chineseConcrete() {

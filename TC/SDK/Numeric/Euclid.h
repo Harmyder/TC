@@ -8,10 +8,15 @@ namespace sdk {
 namespace numeric {
 
     namespace detail {
+        template <class T> T normalizeMod(T a, T m) {
+            if (a < 0) return a + m;
+            return a;
+        }
+
         template <class T> T gcdInternal(T a, T b) {
             while (b != 0) {
                 T t = b;
-                b = a % b;
+                b = normalizeMod(a % b, b);
                 a = t;
             }
             return a;
@@ -60,7 +65,7 @@ namespace numeric {
     template <class T> T invMod(T a, T m) {
         auto p = extendedEuclid(a, m);
         assert(p.first == 1);
-        return p.second.first;
+        return detail::normalizeMod(p.second.first, m);
     }
 
     template <class It> typename It::value_type chinese(It modsB, It modsE, It remsB) {
@@ -70,7 +75,7 @@ namespace numeric {
             auto n = big / *m; // multiplying and dividing by mod might adversely affect accuracy and cause SO in accumulate
             answer += (*remsB) * (n * invMod(n, *m));
         }
-        answer = answer % big;
+        answer = detail::normalizeMod(answer % big, big);
         if (answer < 0) answer = big + answer;
         return answer;
     }

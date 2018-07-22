@@ -182,12 +182,14 @@
     <ClCompile Include="utilities\utfacility\UnitTest.cpp" />
     <ClCompile Include="utilities\utfacility\UnitTestHelpers.cpp" />
     <ClCompile Include="utilities\utfacility\UnitTestsRegistrator.cpp" />
+    <ClCompile Include="_Tasks\RndSubTree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm\BFS.h" />
     <ClInclude Include="algorithm\GraphUtils.h" />
     <ClInclude Include="algorithm\unittests\UnitTest_BFS.h" />
     <ClInclude Include="algorithm\unittests\UnitTest_GraphUtils.h" />
+    <ClInclude Include="SDK\Numeric\MR.h" />
     <ClInclude Include="_Tasks\BearEmptyCoin.h" />
     <ClInclude Include="SDK\Numeric\Euclid.h" />
     <ClInclude Include="SDK\Numeric\UnitTests\UnitTest_Euclid.h" />
@@ -217,6 +219,7 @@
     <ClInclude Include="utilities\utfacility\UnitTest.h" />
     <ClInclude Include="utilities\utfacility\UnitTestHelpers.h" />
     <ClInclude Include="utilities\utfacility\UnitTestsRegistrator.h" />
+    <ClInclude Include="_Tasks\RndSubTree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

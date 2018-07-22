@@ -102,6 +102,9 @@
     <ClCompile Include="_Tasks\BearEmptyCoin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_Tasks\RndSubTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -201,6 +204,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="_Tasks\BearEmptyCoin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_Tasks\RndSubTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Numeric\MR.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
